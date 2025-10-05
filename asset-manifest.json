@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/cpr-card/static/js/main.f510021e.js",
+    "index.html": "/cpr-card/index.html",
+    "main.f510021e.js.map": "/cpr-card/static/js/main.f510021e.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f510021e.js"
+  ]
+}
