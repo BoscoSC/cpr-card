@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import logo from '../../assets/logo.jpg';
 
 const HeaderContainer = styled.header`
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -20,26 +21,16 @@ const Container = styled.div`
   align-items: center;
 `;
 
+const LogoImage = styled.img`
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+`;
+
 const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-`;
-
-const LogoCircle = styled.div`
-  width: 3rem;
-  height: 3rem;
-  background-color: white;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const LogoText = styled.span`
-  color: #3b82f6;
-  font-weight: bold;
-  font-size: 1.25rem;
 `;
 
 const ContactButton = styled.button`
@@ -69,9 +60,7 @@ const Header = () => {
     <HeaderContainer>
       <Container>
         <LogoWrapper>
-          <LogoCircle>
-            <LogoText>CPR</LogoText>
-          </LogoCircle>
+          <LogoImage src={logo} alt="CPR Card Logo" />
           <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', margin: 0 }}>CPR Card</h1>
         </LogoWrapper>
         <ContactButton onClick={handleWhatsAppClick}>

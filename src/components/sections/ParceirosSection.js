@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import aureaClinLogo from '../../assets/aureaClin.jpg';
+import oticaAtualLogo from '../../assets/oticaAtual.jpg';
+import farmSaoJoaoLogo from '../../assets/farmSaoJoao.jpg';
+import soulLogo from '../../assets/soul.jpg';
 
 const parceiros = [
-    { name: 'Hospital Central', sigla: 'H1', color: '#3b82f6'},
-    { name: 'Laboratório Plus', sigla: 'L+', color: '#22c55e'},
-    { name: 'Clínica Médica', sigla: 'CM', color: '#8b5cf6'},
-    { name: 'Farmácia Vida', sigla: 'FV', color: '#ef4444'},
+    { name: 'AureaClin', logo: aureaClinLogo, alt: 'Logo AureaClin' },
+    { name: 'Ótica Atual', logo: oticaAtualLogo, alt: 'Logo Ótica Atual' },
+    { name: 'Farmácia São João', logo: farmSaoJoaoLogo, alt: 'Logo Farmácia São João' },
+    { name: 'Soul Terapias', logo: soulLogo, alt: 'Logo Soul Terapias' },
 ];
 
 const SectionContainer = styled.section`
@@ -19,6 +23,7 @@ const SectionTitle = styled.h3`
   text-align: center;
   color: #1f2937;
   margin-bottom: 3rem;
+  margin-top: 0;
 `;
 
 const Grid = styled.div`
@@ -36,24 +41,23 @@ const PartnerCard = styled.div`
     text-align: center;
 `;
 
-const PartnerIcon = styled.div`
-    width: 4rem;
-    height: 4rem;
+const PartnerName = styled.p`
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin: 0;
+`;
+
+const PartnerLogo = styled.img`
+    width: 6rem;
+    height: 6rem;
     border-radius: 9999px;
-    background-color: ${props => props.color};
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 0.5rem auto;
     color: white;
     font-weight: bold;
-`;
-
-const PartnerName = styled.p`
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #374151;
-    margin: 0;
 `;
 
 const ParceirosSection = () => {
@@ -63,7 +67,7 @@ const ParceirosSection = () => {
             <Grid>
                 {parceiros.map(parceiro => (
                     <PartnerCard key={parceiro.name} className="card-hover">
-                        <PartnerIcon color={parceiro.color}>{parceiro.sigla}</PartnerIcon>
+                        <PartnerLogo src={parceiro.logo} alt={parceiro.alt} />
                         <PartnerName>{parceiro.name}</PartnerName>
                     </PartnerCard>
                 ))}
